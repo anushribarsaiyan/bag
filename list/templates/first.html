@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+   {% for i in stu %}
+
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+          <p>{{i.item_name}}</p>
+          <p>{{i.item_quantity}}</p>
+          <p>{{i.item_status}}</p>
+        </div>
+   </div>
+
+
+
+
+   {% endfor %}
+
+
+{% endblock content %}

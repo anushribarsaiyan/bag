@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+{%  include 'search.html' %}
+<div class="row">
+		<div class="col-lg-12">
+			<div class="box-element">
+                <table class="table">
+  <thead>
+    <tr>
+
+      <th scope="col">item_name</th>
+      <th scope="col">item_quantity</th>
+      <th scope="col">item_status</th>
+      <th scope="col">Date</th>
+         <th scope="col">update</th>
+       <th scope="col">Delete</th>
+        <th scope="col">ADD</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for i in stu %}
+    <tr>
+
+            <td>{{i.item_name}}</td>
+            <td>{{i.item_quantity}}</td>
+            <td>{{i.item_status}}</td>
+             <td>{{i.Date}}</td>
+             <td>
+                   <a href="{% url 'update' i.id %}"><span class="btn btn-primary" >Update</span></a>
+             </td>
+             <td>
+                 <a href="{% url 'delete' i.id %}"><span class="btn btn-danger" >Delete</span></a>
+             </td>
+              <td>
+                  <a href="{% url 'firstpage' %}"><span class="btn btn-danger" >ADD</span></a>
+             </td>
+    </tr>
+   {% endfor %}
+
+  </tbody>
+</table>
+{% endblock content %}
